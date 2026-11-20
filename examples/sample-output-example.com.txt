@@ -1,0 +1,8 @@
+CSP report: https://example.com
+Score: 75/100  Grade: B
+
+  Policy: none sent
+
+Findings (1):
+  [HIGH] Content-Security-Policy: No Content-Security-Policy header was sent, so the browser has no allow-list for scripts, styles or embeds and a single XSS flaw runs attacker code directly.
+        Fix: Send a Content-Security-Policy header, starting with default-src 'self'; script-src 'self' and object-src 'none' as a minimum.

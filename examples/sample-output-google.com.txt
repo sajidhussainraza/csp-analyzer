@@ -1,0 +1,28 @@
+CSP report: https://www.google.com
+Score: 13/100  Grade: F
+
+  Policy: object-src 'none';base-uri 'self';script-src 'nonce-DD9ykePpY6P2wIK3DYHO-Q' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+  (Report-Only: violations are logged, not blocked)
+  Note: script-src uses a nonce or hash, a modern policy.
+
+Findings (10):
+  [HIGH] script-src: script-src allows 'unsafe-eval', so eval() and friends can run attacker-controlled strings as code.
+        Fix: Remove 'unsafe-eval'; rewrite the code that needs eval() instead.
+  [MEDIUM] Content-Security-Policy-Report-Only: Only a Content-Security-Policy-Report-Only header was sent, so violations are logged but nothing is actually blocked.
+        Fix: Move the policy to an enforcing Content-Security-Policy header once the report-only run shows no false positives.
+  [MEDIUM] script-src: script-src allows https:, which is any HTTPS origin, which is barely a restriction at all.
+        Fix: List the exact hosts the site needs instead of https:.
+  [MEDIUM] script-src: script-src allows http:, which is plain-HTTP sources that can be intercepted or downgraded.
+        Fix: List the exact hosts the site needs instead of http:.
+  [MEDIUM] default-src: No default-src fallback, so any directive you forget falls back to loading from anywhere.
+        Fix: Add default-src 'self' (or stricter) so every unlisted resource type defaults to same-origin only.
+  [MEDIUM] frame-ancestors: No frame-ancestors, so the page can be framed by any site (clickjacking).
+        Fix: Add frame-ancestors 'self' (or 'none' if the page must never be framed).
+  [LOW] script-src: script-src allows 'unsafe-inline', but modern browsers ignore it when 'strict-dynamic' and a nonce are present; old browsers still honour it.
+        Fix: Drop 'unsafe-inline' if no legacy browser must be supported.
+  [LOW] form-action: No form-action, so forms can submit credentials to any origin.
+        Fix: Add form-action 'self' unless a form genuinely posts elsewhere.
+  [LOW] upgrade-insecure-requests: No upgrade-insecure-requests, so a stray http:// resource on the page still loads over plain HTTP.
+        Fix: Add upgrade-insecure-requests so browsers upgrade insecure subresources automatically.
+  [LOW] report-uri: report-uri is deprecated; modern browsers prefer report-to.
+        Fix: Add a report-to directive alongside report-uri for modern browsers.
