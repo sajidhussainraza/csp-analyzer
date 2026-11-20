@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a problem with CSP Analyzer
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please fill in as much as you can;
+        the command and the output matter most.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release tag or commit you used (there is no --version flag yet; see the roadmap).
+      placeholder: "1.0.0"
+    validations:
+      required: false
+  - type: input
+    id: python
+    attributes:
+      label: Python version and operating system
+      description: Output of `python3 --version`, plus your OS.
+      placeholder: "Python 3.12 on Ubuntu 24.04"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      description: The exact command, including any flags.
+      placeholder: |
+        python3 csp_analyzer.py https://example.com --json
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: What output, score, or exit code did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+      description: Paste the full output, including any error message.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: header
+    attributes:
+      label: CSP header involved (if any)
+      description: Paste the header value if you know it. Do not paste credentials or private URLs.
+    validations:
+      required: false

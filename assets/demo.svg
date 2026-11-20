@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="demoTitle demoDesc">
+  <title id="demoTitle">Static preview: CSP Analyzer auditing example.com</title>
+  <desc id="demoDesc">Terminal output showing a CSP report for example.com: score 75 out of 100, grade B, one high-severity finding because no Content-Security-Policy header was sent. This is a static preview, not an animated GIF. The full real output is saved in examples/sample-output-example.com.txt.</desc>
+  <defs>
+    <linearGradient id="termBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14202E"/>
+      <stop offset="1" stop-color="#0B2239"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="430" rx="16" fill="url(#termBg)" stroke="#00B4D8" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="48" cy="38" r="9" fill="#C0392B"/>
+  <circle cx="78" cy="38" r="9" fill="#D9A441"/>
+  <circle cx="108" cy="38" r="9" fill="#1FA97A"/>
+  <text x="500" y="44" font-family="monospace" font-size="18" fill="#F5F7FA" fill-opacity="0.6" text-anchor="middle">csp-analyzer — terminal</text>
+  <g font-family="monospace" font-size="19">
+    <text x="36" y="96" fill="#00B4D8">$ python3 csp_analyzer.py https://example.com</text>
+    <text x="36" y="134" fill="#F5F7FA">CSP report: https://example.com</text>
+    <text x="36" y="168" fill="#F5F7FA">Score: 75/100  Grade: B</text>
+    <text x="36" y="212" fill="#F5F7FA" fill-opacity="0.8">  Policy: none sent</text>
+    <text x="36" y="256" fill="#F5F7FA">Findings (1):</text>
+    <text x="36" y="294" fill="#FF7A6B">  [HIGH] Content-Security-Policy: No Content-Security-Policy</text>
+    <text x="36" y="322" fill="#F5F7FA">  header was sent, so the browser has no allow-list for scripts,</text>
+    <text x="36" y="350" fill="#F5F7FA">  styles or embeds and a single XSS flaw runs attacker code directly.</text>
+    <text x="36" y="388" fill="#1FA97A">        Fix: Send a Content-Security-Policy header, starting with</text>
+    <text x="36" y="414" fill="#1FA97A">        default-src 'self'; script-src 'self' and object-src 'none'.</text>
+  </g>
+</svg>

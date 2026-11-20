@@ -193,8 +193,9 @@ def _check_script_sources(directives, findings):
                 "List the exact hosts the site needs instead of %s."
                 % source))
     # unsafe-inline in style-src is less severe: it enables style
-    # injection, not code execution.
-    style = directives.get("style-src") or []
+    # injection, not code execution. style-src falls back to
+    # default-src, so an 'unsafe-inline' there counts too.
+    style = directives.get("style-src") or directives.get("default-src") or []
     if "'unsafe-inline'" in style:
         findings.append(Finding(
             "medium", "style-src",

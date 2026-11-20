@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="bannerTitle bannerDesc">
+  <title id="bannerTitle">CSP Analyzer</title>
+  <desc id="bannerDesc">Audit any website's Content-Security-Policy header in seconds. A dependency-free Python CLI by Cyber Legends.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B2239"/>
+      <stop offset="0.55" stop-color="#102F4D"/>
+      <stop offset="1" stop-color="#0B2239"/>
+    </linearGradient>
+    <linearGradient id="shieldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B4D8"/>
+      <stop offset="1" stop-color="#0077A3"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+  <circle cx="1120" cy="90" r="220" fill="#00B4D8" fill-opacity="0.07"/>
+  <circle cx="120" cy="560" r="180" fill="#00B4D8" fill-opacity="0.06"/>
+  <rect x="0" y="0" width="1280" height="6" fill="#00B4D8"/>
+  <rect x="0" y="634" width="1280" height="6" fill="#00B4D8"/>
+
+  <!-- Shield with checkmark -->
+  <g transform="translate(120,150)">
+    <path d="M 110 0 L 200 34 V 118 C 200 185 158 232 110 250 C 62 232 20 185 20 118 V 34 Z" fill="url(#shieldFill)" fill-opacity="0.18" stroke="#00B4D8" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M 62 118 L 98 154 L 162 84" fill="none" stroke="#00B4D8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Title and tagline -->
+  <text x="400" y="268" font-family="Verdana, Geneva, sans-serif" font-size="92" font-weight="bold" fill="#FFFFFF" letter-spacing="1">CSP Analyzer</text>
+  <text x="402" y="338" font-family="Verdana, Geneva, sans-serif" font-size="32" fill="#00B4D8">Audit any site's Content-Security-Policy in seconds.</text>
+  <text x="402" y="392" font-family="Verdana, Geneva, sans-serif" font-size="26" fill="#F5F7FA" fill-opacity="0.85">A-F grading &#183; Plain-language fixes &#183; Zero dependencies</text>
+
+  <!-- Grade chips -->
+  <g font-family="Verdana, Geneva, sans-serif" font-size="26" font-weight="bold" text-anchor="middle">
+    <rect x="400" y="440" width="72" height="56" rx="10" fill="#1FA97A"/>
+    <text x="436" y="478" fill="#FFFFFF">A</text>
+    <rect x="488" y="440" width="72" height="56" rx="10" fill="#3A7BD5"/>
+    <text x="524" y="478" fill="#FFFFFF">B</text>
+    <rect x="576" y="440" width="72" height="56" rx="10" fill="#D9A441"/>
+    <text x="612" y="478" fill="#0B2239">C</text>
+    <rect x="664" y="440" width="72" height="56" rx="10" fill="#D97A41"/>
+    <text x="700" y="478" fill="#FFFFFF">D</text>
+    <rect x="752" y="440" width="72" height="56" rx="10" fill="#C0392B"/>
+    <text x="788" y="478" fill="#FFFFFF">F</text>
+  </g>
+  <text x="852" y="478" font-family="Verdana, Geneva, sans-serif" font-size="24" fill="#F5F7FA" fill-opacity="0.75">100 &#8594; 0 scoring</text>
+
+  <text x="120" y="590" font-family="Verdana, Geneva, sans-serif" font-size="24" letter-spacing="4" fill="#F5F7FA" fill-opacity="0.7">CYBER LEGENDS</text>
+  <text x="1160" y="590" font-family="Verdana, Geneva, sans-serif" font-size="24" fill="#F5F7FA" fill-opacity="0.7" text-anchor="end">Python 3.10+ &#183; Stdlib only</text>
+</svg>

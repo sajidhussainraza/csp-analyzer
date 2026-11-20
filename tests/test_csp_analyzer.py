@@ -164,6 +164,17 @@ class TestAnalyzeCsp(unittest.TestCase):
         self.assertEqual(len(style), 1)
         self.assertEqual(style[0].severity, "medium")
 
+    def test_style_unsafe_inline_via_default_src(self):
+        # style-src falls back to default-src, so 'unsafe-inline'
+        # there is a style finding even with no style-src directive.
+        report = analyze_csp(
+            "default-src 'self' 'unsafe-inline'; script-src 'self'; "
+            "object-src 'none'; base-uri 'self'; frame-ancestors 'self'; "
+            "form-action 'self'; upgrade-insecure-requests; report-to x")
+        style = [f for f in report.findings if f.directive == "style-src"]
+        self.assertEqual(len(style), 1)
+        self.assertEqual(style[0].severity, "medium")
+
     def test_findings_sorted_high_first(self):
         report = analyze_csp(LOOSE)
         severities = [f.severity for f in report.findings]
